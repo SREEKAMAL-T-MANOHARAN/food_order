@@ -1,26 +1,38 @@
-#include <iostream.h>
-using namespace std;
-int main()
-{
-    {
-	int curry;
-	string name,food;
-	cout <<"  Please Enter Your Name" << endl;
-	cin >> name;
-	cout <<"  Please Oder Your Food:1) chikan biriyani\n\t\t\t2) masaladoshan\n\t\t\t3) poroota\n\t\t\t4) appam\n\t\t\t5) puttu" << endl;
-	cin >> food;
-//	cout<<"  Please Oder Your Curry:1) kadala curry\n\t\t\t 2)motta curry\n\t\t\t 3)chiken curry\n\t\t\t"<< endl;
-//	cin >> curry;
-	cout <<"Name;"<<name<<endl;
-	cout <<"Food;"<<food<<endl;
-//	cout <<"Curry;"<<curry<<endl;
-    }
-   { 
 #include <iostream>
+#include <string.h>
+#include <cctype>
 using namespace std;
 
-	cout<<"YOUR ORDER WILL BE READY IN A FEW MIN ";
-	
+
+// simple imput output programme
+int main(int argc, char const *argv[])
+{
+	string name;
+	cout << "Hai sir, Welcome to our hotel. Please be seated\n";
+	cout << "\nCan you please tell me your name: " ;
+	getline(cin, name);
+	string foods[5] = {"Chicken Biriyani", "MasalaDosa", "Porota", "Appam", "Puttu"};
+	cout << "\nOK! What do you like to have, Here is our list\n\n";
+
+	for (int i = 0; i < 4; i++) {
+		cout << foods[i] << endl;
+	}
+	int price = 40;
+
+	cout << "\nWhat do you want, sir: ";
+	string order;
+	getline(cin, order);
+
+	int amount;
+	cout << "\nHow much do you want: ";
+	cin >> amount;
+
+	int total = price * amount;
+
+	cout << "\nTotal price is $" << total << endl;
+	cout << "\n" << name << " your " << order << " will be ready within few minutes\n";
+	cout << "please wait\n";
+	cout << "Thank you" << endl;
+
 	return 0;
-   }
 }
